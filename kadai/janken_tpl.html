@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!DOCTYPE html>	
 <html>
 <head>
 <meta charset="utf-8">
@@ -6,106 +7,127 @@
 <script src="js/jquery-2.1.3.min.js"></script>
 <link rel="stylesheet" href="css/sample.css">
 <title>じゃんけん</title>
-<!-- <style>
-  body{
+<style>
+    body{
     font-family: "Comic Sans MS";
-  }
-</style> -->
+    }
+</style>
 </head>
 <body>
 
-<header>
-  <h1>じゃんけん</h1>
-</header>
+    <header>
+        <h1>じゃんけん</h1>
+    </header>
 
-<main>
-  <ul>
-    <li id="gu_btn">グー</li>
-    <li id="cho_btn">チョキ</li>
-    <li id="par_btn">パー</li>
-  </ul>
-  <div>コンピュータの出した手は？</div>
-  <div>「<span id="pc_hands">なに？</span>」</div>
-  <br>
-  <div id="judgment" style="display:none;">勝ち</div>
-</main>
+    <main>
+        <ul　class="centert">
+            <li id="gu_btn"><img src="yougu.png" alt="グー"></li>
+            <li id="cho_btn"><img src="youtyo.png" alt="チョキ"></li>
+            <li id="par_btn"><img src="youpa.png" alt="パー"></li>
+        </ul>
+        <div>コンピュータの出した手は？</div>
+        <div>「<span id="pc_hands">なに？</span>」</div>
+        <br>
+        <div id="judgment" style="display:none;">勝ち</div>
+    </main>
 
-<footer></footer>
-<script>
-  $("div").css("text-align","center");
-  $("#judgment").css("font-size","150%");
-//じゃんけん用のSCRIPTを書いてください
-$("#gu_btn").on("click",function(){
-  const num = Math.ceil(Math.random()*3);
-    if(num == 1){
-        $("#pc_hands").html("グー");            //出した手
-        $("#judgment").html("あいこ");　　　　　 //勝敗
-        $("#judgment").hide().fadeIn(1000);    //フェードイン作業
-        $("#judgment").css("color","#ff0000"); //文字装飾
-    }
-    if(num == 2){
-        $("#pc_hands").html("チョキ");
-        $("#judgment").html("まけ");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#00ff00");
-    }
-    if(num == 3){
-        $("#pc_hands").html("パー");
-        $("#judgment").html("勝ち");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#0000ff");
-    }
-});
-$("#cho_btn").on("click",function(){
-  const num = Math.ceil(Math.random()*3);
-    if(num == 1){
-        $("#pc_hands").html("グー");
-        $("#judgment").html("まけ");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#00ff00");
-    }
-    if(num == 2){
-        $("#pc_hands").html("チョキ");
-        $("#judgment").html("あいこ");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#ff0000");
-    }
-    if(num == 3){
-        $("#pc_hands").html("パー");
-        $("#judgment").html("勝ち");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#0000ff");
-    }
-});
-$("#par_btn").on("click",function(){
-  const num = Math.ceil(Math.random()*3);
-    if(num == 1){
-        $("#pc_hands").html("グー");
-        $("#judgment").html("勝ち");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#0000ff");
-    }
-    if(num == 2){
-        $("#pc_hands").html("チョキ");
-        $("#judgment").html("まけ");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#00ff00");
-    }
-    if(num == 3){
-        $("#pc_hands").html("パー");
-        $("#judgment").html("あいこ");
-        $("#judgment").hide().fadeIn(1000);
-        $("#judgment").css("color","#ff0000");
-    }
-});
-    
-    
-    
-    
-    
-    
-    
+    <footer></footer>
 
-</script>
+    <script>
+        document.body.style.backgroundColor = "#546e80";
+        $("div").css("text-align","center");
+        $("#judgment").css("font-size","150%");
+        $("img").css("width","80%");
+        //じゃんけん用のSCRIPTを書いてください
+        $("#gu_btn").on("click",function(){
+            var result = confirm('本当にこれでいい？');
+            if(result){
+                const num = Math.ceil(Math.random()*3);
+                if(num == 1){
+                    $("#pc_hands").html("グー");            //出した手
+                    $("#judgment").html("あいこ");　　　　　 //勝敗
+                    $("#judgment").hide().fadeIn(1000);    //フェードイン作業
+                    $("#judgment").css("color","#689b94"); //文字装飾
+                }
+                if(num == 2){
+                    $("#pc_hands").html("チョキ");
+                    $("#judgment").html("まけ");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#9ba2ce");
+                }
+                if(num == 3){
+                    $("#pc_hands").html("パー");
+                    $("#judgment").html("勝ち");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#c68294");
+                }
+            }else{
+                $("#pc_hands").html("なに？");
+                $("#judgment").html("選び直してください");
+                $("#judgment").css("color","#000000")
+                $("#judgment").hide().fadeIn(1000);
+            }
+        });
+
+        $("#cho_btn").on("click",function(){
+            var result = confirm('本当にこれでいい？');
+            if(result){
+                const num = Math.ceil(Math.random()*3);
+                if(num == 1){
+                    $("#pc_hands").html("グー");
+                    $("#judgment").html("まけ");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#9ba2ce");
+                }
+                if(num == 2){
+                    $("#pc_hands").html("チョキ");
+                    $("#judgment").html("あいこ");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#689b94");
+                }
+                if(num == 3){
+                    $("#pc_hands").html("パー");
+                    $("#judgment").html("勝ち");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#c68294");
+                }
+            }else{
+                $("#pc_hands").html("なに？");
+                $("#judgment").html("選び直してください");
+                $("#judgment").css("color","#000000")
+                $("#judgment").hide().fadeIn(1000);
+            }
+        });
+
+        $("#par_btn").on("click",function(){
+            var result = confirm('本当にこれでいい？');
+            if(result){
+                const num = Math.ceil(Math.random()*3);
+                if(num == 1){
+                    $("#pc_hands").html("グー");
+                    $("#judgment").html("勝ち");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#c68294");
+                }
+                if(num == 2){
+                    $("#pc_hands").html("チョキ");
+                    $("#judgment").html("まけ");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#9ba2ce");
+                }
+                if(num == 3){
+                    $("#pc_hands").html("パー");
+                    $("#judgment").html("あいこ");
+                    $("#judgment").hide().fadeIn(1000);
+                    $("#judgment").css("color","#689b94");
+                }
+            }else{
+                $("#pc_hands").html("なに？");
+                $("#judgment").html("選び直してください");
+                $("#judgment").css("color","#000000")
+                $("#judgment").hide().fadeIn(1000);
+            }
+        });
+    </script>
 </body>
 </html>
