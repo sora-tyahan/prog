@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        function tasu(a,b){
+            const t = a + b;
+            return t;
+        }
+        function hiku(a,b){
+            const h = a - b;
+            return h;
+        }
+        function kake(a,b){
+            const k = a * b;
+            return k;
+        }
+        function waru(a,b){
+            const w = a / b;
+            return w;
+        }
+        //実行群
+        const a = tasu(10,10);
+        const b = hiku(20,30);
+        const c = kake(40,50);
+        const d = waru(20,5);
+
+        const kekka = a + b + c + d;
+        document.querySelector("h1").innerHTML=kekka;
+    </script>
+
+</body>
+</html>
