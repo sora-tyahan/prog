@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 32px;
+    font-family: 'hannotate TC','メイリオ','ヒラギノ角ゴ','Gabriola','Avenir Next Condensed';
+  }
+  
+  header {
+    background-color: rgb(104, 158, 158);
+    border-bottom: 1px solid rgb(215, 224, 217);
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  
+  main {
+    border-bottom: 1px solid rgb(229, 236, 236);
+  }
+  h2{
+    font-size:24px;
+  }
+  footer {
+    background-color: rgb(173, 193, 194);
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: #fff;
+  }
+  
+  p {
+    font-size: 80%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    background-color: rgb(242, 246, 247);
+    height: 80px;
+  }
+  
+  ul {
+    padding: 0;
+    border-top: 1px solid #000000;
+    display: table;
+    /* 定義 */
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  li {
+    text-align: center;
+    list-style-type: none;
+    border: 1px solid rgb(107, 129, 124);
+    background-color: rgb(141, 137, 137);
+    display: table-cell;
+    /* 定義 */
+    cursor: pointer;
+  }
+  
+  li:hover {
+    background: #428591;
+    color: rgb(207, 205, 69);
+  }
+  textarea{
+    margin: 3%;
+    width: 30%;
+    height: 30px;
+    font-size:50%;
+    box-shadow: 3px 3px 3px 3px #555;
+  }
+
+  label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+label::before,
+label::after {
+  content: "";
+  display: block; 
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+label::before {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+}
+
+label::after {
+  background-color: #ddd;
+  border-radius: 50%;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  left: 7px
+}
+
+input:checked + label::after {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.4;
+  z-index: -1;
+}
+.Lines_v2 {
+  background-image: linear-gradient(to right, #eaf1f1, #cbcfcd 10px, #7f8685 10px, #adc5c4 );
+  background-size: 20px 100%;
+}
