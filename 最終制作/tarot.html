@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarot</title>
+    <script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="on.css">
+</head>
+<body>
+    <header>
+        <h1>タロット占い</h1>
+    </header>
+    <main>
+        <ul>
+            <li>総合運</li>
+        <img id="ilu" src="reme.jpg" alt="タロット" width="30%">
+        <p id="echo1"></p>
+        <p id="imi1"></p>
+    </main>
+    <footer>こちら、知識のないものが意味を調べながらイメージで占っています。あまり当てになさいませんようお願いします。</footer>
+
+    <script>
+        //CLickイベントのブロック
+        const ilu = document.querySelector("#ilu")
+        ilu.onclick = function(){
+            $(this).stop().animate({zIndex:1},{
+                duration:400,
+                step:function(now){
+                $(this).css({transform:'rotate(' + (now * 360) + 'deg)'});
+                },
+                complete:function(){
+                $(this).css('ilu', 0);
+                }
+            });
+    
+            //乱数を作る
+            const num = Math.ceil(Math.random() * 44);
+        
+            //乱数をif分岐処理で分ける
+            if(num==1){
+                echo1.innerHTML = "魔術師／正位置";
+                document.getElementById("ilu").src = "illust/taro1.jpg";
+                imi1.innerHTML = 
+                "物事の始まり。希望、創造。何かを始めるのにぴったりな時期です。ぜひ宗教的な行い（参拝など）も行なってください。修行もよし。";
+            }else if(num==2){
+                echo1.innerHTML = "女教皇／正位置";
+                document.getElementById("ilu").src = "illust/taro2.jpg";
+                imi1.innerHTML = 
+                "知性、常識、落ち着き、謎、啓示されない未来。己の知性で戦ってください。基本的にはいい意味です。";
+            }else if(num==3){
+                echo1.innerHTML = "女帝／正位置";
+                document.getElementById("ilu").src = "illust/taro3.jpg";
+                imi1.innerHTML = 
+                "美貌の女性、未来に対し安定した現状、癒し、無知。安らかな期間に入りました。親切心も高められています。自然に接するとなおよし。";
+            }else if(num==4){
+                echo1.innerHTML = "皇帝／正位置";
+                document.getElementById("ilu").src = "illust/taro4.jpg";
+                imi1.innerHTML = 
+                "権力、情熱、闘争本能。なにかしらみなぎっている状態です。行動に移すのもよし。だけど身を滅ぼさぬように。";
+            }else if(num==5){
+                echo1.innerHTML = "法王／正位置";
+                document.getElementById("ilu").src = "illust/taro5.jpg";
+                imi1.innerHTML = 
+                "人生の転換、思いやり、宗教。幸福の援助が得られる。何かしらを変えるタイミング。いい後押しがあるでしょう。";
+            }else if(num==6){
+                echo1.innerHTML = "恋人／正位置";
+                document.getElementById("ilu").src = "illust/taro6.jpg";
+                imi1.innerHTML = 
+                "恋愛、嫉妬、趣味、選択の時期。恋愛的な何かがあります。または苦手なものの克服も見込めます。魅力が高まっています。";
+            }else if(num==7){
+                echo1.innerHTML = "戦車／正位置";
+                document.getElementById("ilu").src = "illust/taro7.jpg";
+                imi1.innerHTML = 
+                "征服、勝利、野望を成し遂げる、のっとり。なにか他者から奪える力が漲ります。トラブルに巻き込まれないように。";
+            }else if(num==8){
+                echo1.innerHTML = "力／正位置";
+                document.getElementById("ilu").src = "illust/taro8.jpg";
+                imi1.innerHTML = 
+                "勇気、自己犠牲、インスピレーション、忍耐。理想に向かっていく力があります。完全な成功と名誉が手に入るでしょう。";
+            }else if(num==9){
+                echo1.innerHTML = "隠者／正位置";
+                document.getElementById("ilu").src = "illust/taro9.jpg";
+                imi1.innerHTML = 
+                "秘められた知恵、哲学。自己の判断による行動、忠告。逃げることも選択のうちです。慎重なのはいいこと。";
+            }else if(num==10){
+                echo1.innerHTML = "運命の輪／正位置";
+                document.getElementById("ilu").src = "illust/taro10.jpg";
+                imi1.innerHTML = 
+                "幸運、成功、無限の広がり、運命的な出来事。なんか運命的な力で成功できます。問題は解決します。なるべくして成功します。";
+            }else if(num==11){
+                echo1.innerHTML = "正義／正位置";
+                document.getElementById("ilu").src = "illust/taro11.jpg";
+                imi1.innerHTML = 
+                "正義、捌き、公平な人物、バランス。あなたが正義、裁判官のような状況になります。平等に正当な判断を下せるでしょう。";
+            }else if(num==12){
+                echo1.innerHTML = "吊るし人／正位置";
+                document.getElementById("ilu").src = "illust/taro12.jpg";
+                imi1.innerHTML = 
+                "自己犠牲、試練、終業、身動きの取れない状況、心の柔軟性。待つ時です。耐えましょう。今は無理です。";
+            }else if(num==13){
+                echo1.innerHTML = "死神／正位置";
+                document.getElementById("ilu").src = "illust/taro13.jpg";
+                imi1.innerHTML = 
+                "全てを捨てる、ものごとのよくない終わり。損失。一度無に戻したほうがいい。健康運とかすごい悪くなってます。お祓い行ってください。";
+            }else if(num==14){
+                echo1.innerHTML = "節制／正位置";
+                document.getElementById("ilu").src = "illust/taro14.jpg";
+                imi1.innerHTML = 
+                "業績を上げる、社会的な名声。管理を徹底したらもう名声という名声もしくは蓄財や生命力が溢れます。";
+            }else if(num==15){
+                echo1.innerHTML = "悪魔／正位置";
+                document.getElementById("ilu").src = "illust/taro15.jpg";
+                imi1.innerHTML = 
+                "病気、不況、不服、策謀、暴力、異常な努力。友人関係がやばそうです。裏切られたり失ったり。";
+            }else if(num==16){
+                echo1.innerHTML = "塔／正位置";
+                document.getElementById("ilu").src = "illust/taro16.jpg";
+                imi1.innerHTML = 
+                "災難、自己、破壊、悲劇、信用の失墜、古い概念を覆す。世代交代みたいなもので精神を病みます。";
+            }else if(num==17){
+                echo1.innerHTML = "星／正位置";
+                document.getElementById("ilu").src = "illust/taro17.jpg";
+                imi1.innerHTML = 
+                "恵の雨、豊かな恵み、愛を与える、美しさ。損失はあれど他人のためであったりします。健康運がすこぶるいいです。";
+            }else if(num==18){
+                echo1.innerHTML = "月／正位置";
+                document.getElementById("ilu").src = "illust/taro18.jpg";
+                imi1.innerHTML = 
+                "予期されない危険、スキャンダル、心霊現象、隠れた敵。なにか騙されたりしそうですね。オカルト的なものも集まってます。";
+            }else if(num==19){
+                echo1.innerHTML = "太陽／正位置";
+                document.getElementById("ilu").src = "illust/taro19.jpg";
+                imi1.innerHTML = 
+                "幸運、成功、物質的にも幸福な姿。結婚だったり妊娠だったり環境だったりなんか良さげです。幸せになります。";
+            }else if(num==20){
+                echo1.innerHTML = "審判／正位置";
+                document.getElementById("ilu").src = "illust/taro20.jpg";
+                imi1.innerHTML = 
+                "目覚め、思想を身につける、成功。なんらかの結果が出ます。場合によっては損失もあります。変化が起こります。";
+            }else if(num==21){
+                echo1.innerHTML = "愚者／正位置";
+                document.getElementById("ilu").src = "illust/taro0.jpg";
+                imi1.innerHTML = 
+                "愚かな行動、間違った道をいく、偏執狂、アルコール中毒。疲れてよくないことになりそうです。寝たりいい感じにハマらない趣味をするのが吉です。";
+            }else if(num==22){
+                echo1.innerHTML = "世界／正位置";
+                document.getElementById("ilu").src = "illust/taro21.jpg";
+                imi1.innerHTML = 
+                "最も強く最もいい意味。目標の達成、成功、名声、極楽往生。なによりもいい状態です。具体的なことは特にないですが本当に良い状態です。すごいです、おめでとう。";
+            }else if(num==23){
+                echo1.innerHTML = "魔術師／逆位置";
+                document.getElementById("ilu").src = "illust2/taro1.jpg";
+                imi1.innerHTML = 
+                "優柔不断、不適当、不安定、弱さ。臆病になっていますし創造力も足りてません。人に押し切られたりします。頑張ってください。";
+            }else if(num==24){
+                echo1.innerHTML = "女教皇／逆位置";
+                document.getElementById("ilu").src = "illust2/taro2.jpg";
+                imi1.innerHTML = 
+                "わがまま、思慮のない行為、移り気から起こる失敗、悪女に翻弄される。自惚れや表面的な知識で他人に迷惑をかけたりかけられたりします。";
+            }else if(num==25){
+                echo1.innerHTML = "女帝／逆位置";
+                document.getElementById("ilu").src = "illust2/taro3.jpg";
+                imi1.innerHTML = 
+                "優柔不断な愛、女らしい性格のマイナス面、真実。生産性の欠如がありますがなんやかんやで問題は解決する見込みもあります。";
+            }else if(num==26){
+                echo1.innerHTML = "皇帝／逆位置";
+                document.getElementById("ilu").src = "illust2/taro4.jpg";
+                imi1.innerHTML = 
+                "未熟、無力、統率力を失う、慈悲。なにかに気持ちがぶれてしまいそうです。必ずしも悪い意味でもないです。敵に塩を送りそう。";
+            }else if(num==27){
+                echo1.innerHTML = "法王／逆位置";
+                document.getElementById("ilu").src = "illust2/taro5.jpg";
+                imi1.innerHTML = 
+                "異端、慈悲や思いやりに欠ける、誤った情報、悪意ある忠告。情報が幸せに大事なようですがその情報を掴むのが難しそうです。あと援助が絶たれます。";
+            }else if(num==28){
+                echo1.innerHTML = "恋人／逆位置";
+                document.getElementById("ilu").src = "illust2/taro6.jpg";
+                imi1.innerHTML = 
+                "気まぐれ、道徳心の欠如による危険、希望に関して重要な道が選べない。愚かな計画により失敗が起こります。";
+            }else if(num==29){
+                echo1.innerHTML = "戦車／逆位置";
+                document.getElementById("ilu").src = "illust2/taro7.jpg";
+                imi1.innerHTML = 
+                "計画の挫折、利己主義、暴力、敗北。他人のことを考える余裕がないみたいです。あまりうまくいくことはないかな。";
+            }else if(num==30){
+                echo1.innerHTML = "力／逆位置";
+                document.getElementById("ilu").src = "illust2/taro8.jpg";
+                imi1.innerHTML = 
+                "独裁、力の乱用、獣性や強いものに負ける。なにかにゴリ押されそうです。忍耐力が低下しています。チャンス逃してしまわないように。";
+            }else if(num==31){
+                echo1.innerHTML = "隠者／逆位置";
+                document.getElementById("ilu").src = "illust2/taro9.jpg";
+                imi1.innerHTML = 
+                "愚かな知恵、未熟、忠告の拒否、理由のない警戒。情報に注意してください。相手の親切心を見抜けますように。";
+            }else if(num==32){
+                echo1.innerHTML = "運命の輪／逆位置";
+                document.getElementById("ilu").src = "illust2/taro10.jpg";
+                imi1.innerHTML = 
+                "幸福の後にやってくる突然の不幸、挫折、事件の終わり。気を抜かないように気をつけて。ただ悪いこと続きだった場合いいことの方に転換するかも。";
+            }else if(num==33){
+                echo1.innerHTML = "正義／逆位置";
+                document.getElementById("ilu").src = "illust2/taro11.jpg";
+                imi1.innerHTML = 
+                "相手を厳しく裁く、無法、公平さを欠く。あらゆるバランスが崩れてます。偏見が強まってるのかも。家庭と仕事どっちが大事なのという質問はどちらも大切にしてください。";
+            }else if(num==34){
+                echo1.innerHTML = "吊るし人／逆位置";
+                document.getElementById("ilu").src = "illust2/taro12.jpg";
+                imi1.innerHTML = 
+                "わがまま、自己主張がすぎる、敗北に導く精神的葛藤。全体が見えなくなっているかも。誰かの様子を伺って。";
+            }else if(num==35){
+                echo1.innerHTML = "死神／逆位置";
+                document.getElementById("ilu").src = "illust2/taro13.jpg";
+                imi1.innerHTML = 
+                "意識の変革、惰性、再生、病気回復。いろいろ解釈はありますがもう運命です。睡眠大事。いい方向に行くかも。";
+            }else if(num==36){
+                echo1.innerHTML = "節制／逆位置";
+                document.getElementById("ilu").src = "illust2/taro14.jpg";
+                imi1.innerHTML = 
+                "短気、贅沢、浪費、夢想的な恋愛。恋愛運の下りがあります。宗教に関してることがおこる。博打にはまらないように。";
+            }else if(num==37){
+                echo1.innerHTML = "悪魔／逆位置";
+                document.getElementById("ilu").src = "illust2/taro15.jpg";
+                imi1.innerHTML = 
+                "心霊学、臆病、屈服からの解放、病気の回避。マイナス思考や逃げ腰が悪運からの救いになるかも。盲目になることは良くないです。";
+            }else if(num==38){
+                echo1.innerHTML = "塔／逆位置";
+                document.getElementById("ilu").src = "illust2/taro16.jpg";
+                imi1.innerHTML = 
+                "不当な圧迫、罠にハマる、熱しやすいが冷めやすい態度。ちょっとしたおっかなびっくり体験をするかも。熱量の差で窮地に陥ることも。";
+            }else if(num==39){
+                echo1.innerHTML = "星／逆位置";
+                document.getElementById("ilu").src = "illust2/taro17.jpg";
+                imi1.innerHTML = 
+                "洪水、頑固、水に流される、働き過ぎによる疲労。疲労は顔面にもでます。こまめに休憩を取ること、物事に過敏になっているのである程度距離を取ること。";
+            }else if(num==40){
+                echo1.innerHTML = "月／逆位置";
+                document.getElementById("ilu").src = "illust2/taro18.jpg";
+                imi1.innerHTML = 
+                "小さな嘘、少しの失敗、過去の出来事に影響される、過去の嫌な相手が現れる。不安定ですが軽いびっくり体験です。楽しんでください。";
+            }else if(num==41){
+                echo1.innerHTML = "太陽／逆位置";
+                document.getElementById("ilu").src = "illust2/taro19.jpg";
+                imi1.innerHTML = 
+                "婚約破棄、独裁、孤独、わがままから来る人間関係の失敗。人間関係がとにかくひどいことになっています。独裁があるので他人の意見をちゃんと聞くといいかも。";
+            }else if(num==42){
+                echo1.innerHTML = "審判／逆位置";
+                document.getElementById("ilu").src = "illust2/taro20.jpg";
+                imi1.innerHTML = 
+                "不安定、精神力の欠如、優柔不断、単純。弱気で無気力になってます。癒されたほうがいいかもしれません。猫とかおすすめです。";
+            }else if(num==43){
+                echo1.innerHTML = "愚者／逆位置";
+                document.getElementById("ilu").src = "illust2/taro0.jpg";
+                imi1.innerHTML = 
+                "希望、終わりからの再生、学問、良い旅。いい方向に向かっています。悟りを開く感じで目が覚めます。";
+            }else if(num==44){
+                echo1.innerHTML = "世界／逆位置";
+                document.getElementById("ilu").src = "illust2/taro21.jpg";
+                imi1.innerHTML = 
+                "挫折、不完全、物質への未練、惰性。不完全という意味が大きいかも。そこまで失敗が大きいわけではないけど完璧なものになるかと言われるとそれは違くてモヤモヤがずっと残ります。";
+            }
+        };
+        
+
+        </script>
+</body>
+</html>

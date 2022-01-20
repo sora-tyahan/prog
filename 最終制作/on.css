@@ -1,0 +1,43 @@
+ul {
+    list-style: none;
+  }
+body{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(45deg, #fcff5d,#0a2963,#ff5cce);/*グラデーションを定義*/
+    background-size: 200% 200%;/*サイズを大きくひきのばす*/
+    animation: bggradient 20s ease infinite;
+    color: #c7c7c7;
+  }
+  @keyframes bggradient{
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  h1{
+    color: #dfe5e9;
+    text-align: center;
+    padding: 0.25em;
+    border-top: solid 2px #424a50;
+    border-bottom: solid 2px #424a50;
+    background: -webkit-repeating-linear-gradient(-45deg, #606569, #70777c 3px,#474c50 3px, #162b41 7px);
+    background: repeating-linear-gradient(-45deg, #545c63, #4e545a 3px,#626970 3px, #707479 7px);
+  }
+
+footer{
+    font-size: 80%;
+    color: #c2d0dd;
+  text-align: center;
+  padding: 0.25em;
+  border-top: solid 2px #424a50;
+  border-bottom: solid 2px #424a50;
+  background: -webkit-repeating-linear-gradient(-45deg, #606569, #70777c 3px,#474c50 3px, #162b41 7px);
+  background: repeating-linear-gradient(-45deg, #545c63, #4e545a 3px,#626970 3px, #707479 7px);
+  }
